@@ -55,28 +55,30 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Download and install python: 
-
+Download and install [python](https://www.python.org/)
 
 ### Installation
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/Dalton_V/CookieClickerAutomation.git
    ```
+
 2. Install packages
-  ```sh
-  pip install pyautogui
-  pip install pillow
-  ```
+
+   ```sh
+   pip install pyautogui
+   pip install pillow
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Better Error Handling
-- [ ] Better GUI
+* [ ] Better Error Handling
+* [ ] Better GUI
 
 See the [open issues](https://github.com/Dalton_V/CookieClickerAutomation/issues) for a full list of proposed features (and known issues).
 
@@ -98,18 +100,5 @@ Project Link: [https://github.com/Dalton_V/CookieClickerAutomation](https://gith
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Dalton_V/CookieClickerAutomation.svg?style=for-the-badge
-[contributors-url]: https://github.com/Dalton_V/CookieClickerAutomation/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Dalton_V/CookieClickerAutomation.svg?style=for-the-badge
-[forks-url]: https://github.com/Dalton_V/CookieClickerAutomation/network/members
-[stars-shield]: https://img.shields.io/github/stars/Dalton_V/CookieClickerAutomation.svg?style=for-the-badge
-[stars-url]: https://github.com/Dalton_V/CookieClickerAutomation/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Dalton_V/CookieClickerAutomation.svg?style=for-the-badge
-[issues-url]: https://github.com/Dalton_V/CookieClickerAutomation/issues
-[license-shield]: https://img.shields.io/github/license/Dalton_V/CookieClickerAutomation.svg?style=for-the-badge
-[license-url]: https://github.com/Dalton_V/CookieClickerAutomation/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
-
