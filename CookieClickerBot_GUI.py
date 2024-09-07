@@ -15,83 +15,84 @@ def auto_play():
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
             pyautogui.click(cursorX, cursorY)
-        except:
-            print("No Golden")
+        except pyautogui.ImageNotFoundException:
+            print("Golden Cookie not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\StoreEdge.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Store")
+        except pyautogui.ImageNotFoundException:
+            print("Store icon not found")
 
+        #Allow for numbers to not cover cookie.
         time.sleep(1)
 
-        #Go back to the cookie to colapse the store menue
+        #Go back to the cookie to colapse the store menu
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5)
             pyautogui.click(cursorX, cursorY, 5, .025)
-        except:
-            print("No cookie")
+        except pyautogui.ImageNotFoundException:
+            print("Cookie not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Shipment.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 4, .025)
-        except:
-            print("No Shipment")
+        except pyautogui.ImageNotFoundException:
+            print("Shipment not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wizard.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Wizard")
+        except pyautogui.ImageNotFoundException:
+            print("Wizard not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Temple.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Temple")
+        except pyautogui.ImageNotFoundException:
+            print("Temple not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Bank.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Bank")
+        except pyautogui.ImageNotFoundException:
+            print("Bank not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Factory.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Factory")
+        except pyautogui.ImageNotFoundException:
+            print("Factory not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Mine.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Mine")
+        except pyautogui.ImageNotFoundException:
+            print("Mine not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Farm.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No Farm")
+        except pyautogui.ImageNotFoundException:
+            print("Farm not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Grandma.png', confidence=0.5)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No grandma")
+        except pyautogui.ImageNotFoundException:
+            print("Grandma not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Cursor.png', confidence=0.5)
             pyautogui.click(cursorX, cursorY, 2, .025)
-        except:
-            print("No cursor")
+        except pyautogui.ImageNotFoundException:
+            print("Cusor not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5)
             pyautogui.click(cursorX, cursorY, 1000, .025)
-        except:
-            print("No cookie")
+        except pyautogui.ImageNotFoundException:
+            print("Cookie not found")
         
         print(x)
 
