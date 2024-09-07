@@ -2,6 +2,7 @@ import pyautogui
 import time
 import tkinter as tk
 from tkinter import ttk
+import keyboard
 
 pyautogui.FAILSAFE = True
 
@@ -35,8 +36,14 @@ def auto_play():
             print("Cookie not found")
 
         try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Shipment.png', confidence=0.8)
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\AlchemyLab.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 4, .025)
+        except pyautogui.ImageNotFoundException:
+            print("AlchemyLab not found")
+
+        try:
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Shipment.png', confidence=0.8)
+            pyautogui.click(cursorX, cursorY, 2, .025)
         except pyautogui.ImageNotFoundException:
             print("Shipment not found")
 
@@ -95,6 +102,14 @@ def auto_play():
             print("Cookie not found")
         
         print(x)
+
+        try:
+            if keyboard.is_pressed('esc'):
+                break
+            else:
+                pass
+        finally:
+            pass
 
         if x == 20:
             print('sleep')
