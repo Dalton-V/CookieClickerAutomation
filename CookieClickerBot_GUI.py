@@ -3,15 +3,44 @@ import time
 import tkinter as tk
 from tkinter import ttk
 import keyboard
+import threading
+import easyocr
+import numpy as np
 
-pyautogui.FAILSAFE = True
+pyautogui.FAILSAFE = True  
+
+def read():
+    reader = easyocr.Reader(['en'])
+    pyautogui.screenshot('screenschot.png')
+    text = reader.readtext('screenschot.png')
+    for x in text:
+        print(x)
 
 def click_cookie():
     cookielocationx, cookielocationy = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5)
-    pyautogui.click(cookielocationx, cookielocationy, 500, .025)
+
+    while True:
+        pyautogui.click(cookielocationx, cookielocationy, 300, .025)
+        
+        try:
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
+            pyautogui.click(cursorX, cursorY)
+        except pyautogui.ImageNotFoundException:
+            print("Golden Cookie not found")
+
+        time.sleep(.5)
+
+def look_for_green():
+    image = np.array(pyautogui.screenshot())
+    greenPixels = np.argwhere(image == [97,235,96])
+
+    for x in greenPixels:
+        pyautogui.click(x[0], x[1])
 
 def auto_play():
     x = 0
+    cookieX, cookieY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5) 
+
     while True:
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
@@ -25,19 +54,18 @@ def auto_play():
         except pyautogui.ImageNotFoundException:
             print("Store icon not found")
 
-        #Allow for numbers to not cover cookie.
-        time.sleep(1)
-
         #Go back to the cookie to colapse the store menu
+        pyautogui.click(cookieX, cookieY, 5, .025)
+
         try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5)
-            pyautogui.click(cursorX, cursorY, 5, .025)
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Portal.png', confidence=0.8)
+            pyautogui.click(cursorX, cursorY, 4, .025)
         except pyautogui.ImageNotFoundException:
-            print("Cookie not found")
+            print("Portal not found")
 
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\AlchemyLab.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 4, .025)
+            pyautogui.click(cursorX, cursorY, 2, .025)
         except pyautogui.ImageNotFoundException:
             print("AlchemyLab not found")
 
@@ -95,21 +123,11 @@ def auto_play():
         except pyautogui.ImageNotFoundException:
             print("Cusor not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5)
-            pyautogui.click(cursorX, cursorY, 1000, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Cookie not found")
-        
+        pyautogui.click(cookieX, cookieY, 1000, .025)
         print(x)
 
-        try:
-            if keyboard.is_pressed('esc'):
-                break
-            else:
-                pass
-        finally:
-            pass
+        if keyboard. is_pressed('esc'):
+            exit()
 
         if x == 20:
             print('sleep')
@@ -126,5 +144,8 @@ clickCookieButton.pack()
 
 autoPlayButton = ttk.Button(master = window, text = "Auto Play", command = auto_play)
 autoPlayButton.pack()
+
+readButton = ttk.Button(master= window, text = "Read", command= look_for_green)
+readButton.pack()
 
 window.mainloop()
