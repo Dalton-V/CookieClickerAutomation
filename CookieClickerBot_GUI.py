@@ -37,9 +37,19 @@ def look_for_green():
         pyautogui.click(x[0], x[1])
 
 def auto_play():
-    x = 0
     cookieX, cookieY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5) 
-
+    #todo: these should be settings to select in the GUI
+    buyCursor = False
+    buyGrandma = False
+    buyFarm = False
+    buyMine = False
+    buyFactory = False
+    buyBank = False
+    buyTemple = False
+    buyWizard = True
+    buyShhipment = True
+    buyAlchemy = True
+    buyPortal = True
     while True:
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
@@ -56,84 +66,87 @@ def auto_play():
         #Go back to the cookie to colapse the store menu
         pyautogui.click(cookieX, cookieY, 5, .025)
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Portal.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 4, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Portal not found")
+        if buyPortal:
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Portal.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 4, .025)
+            except pyautogui.ImageNotFoundException:
+                print("Portal not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\AlchemyLab.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("AlchemyLab not found")
+        if buyAlchemy:
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\AlchemyLab.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("AlchemyLab not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Shipment.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Shipment not found")
+        if buyShhipment:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\shipment.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("shipment not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wizard.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Wizard not found")
+        if buyWizard:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\wizard.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("wizard not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Temple.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Temple not found")
+        if buyTemple:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\temple.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("temple not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Bank.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Bank not found")
+        if buyBank:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\bank.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("bank not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Factory.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Factory not found")
+        if buyFactory:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\factory.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("factory not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Mine.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Mine not found")
+        if buyMine:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\mine.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("mine not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Farm.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Farm not found")
+        if buyFarm:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\farm.png', confidence=0.8)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("farm not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Grandma.png', confidence=0.5)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Grandma not found")
+        if buyGrandma:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\grandma.png', confidence=0.5)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("grandma not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Cursor.png', confidence=0.5)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Cusor not found")
+        if buyCursor:
+            try:
+                cursorx, cursory = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\cursor.png', confidence=0.5)
+                pyautogui.click(cursorx, cursory, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("cusor not found")
 
         pyautogui.click(cookieX, cookieY, 1000, .025)
-        print(x)
 
         if keyboard. is_pressed('esc'):
             exit()
-
-        if x == 20:
-            print('sleep')
-            time.sleep(5)
-            x = 0
-        
-        x = x+1
 
 window = tk.Tk()
 window.geometry('500x500')
