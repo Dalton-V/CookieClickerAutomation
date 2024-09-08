@@ -3,7 +3,6 @@ import time
 import tkinter as tk
 from tkinter import ttk
 import keyboard
-import threading
 import easyocr
 import numpy as np
 
@@ -21,7 +20,7 @@ def click_cookie():
 
     while True:
         pyautogui.click(cookielocationx, cookielocationy, 300, .025)
-        
+
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
             pyautogui.click(cursorX, cursorY)
