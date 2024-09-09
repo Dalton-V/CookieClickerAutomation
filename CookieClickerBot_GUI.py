@@ -46,10 +46,12 @@ def auto_play():
     buyFactory = False
     buyBank = False
     buyTemple = False
-    buyWizard = True
-    buyShhipment = True
-    buyAlchemy = True
+    buyWizard = False
+    buyShhipment = False
+    buyAlchemy = False
     buyPortal = True
+    buyTimeMachine = True
+    buyAntimCondenser = True
     while True:
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
@@ -66,10 +68,24 @@ def auto_play():
         #Go back to the cookie to colapse the store menu
         pyautogui.click(cookieX, cookieY, 5, .025)
 
+        if buyAntimCondenser:
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\AntimCondenser.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("Antim Condenser not found")
+
+        if buyTimeMachine:
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\TimeMachine.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("Time Machine not found")
+
         if buyPortal:
             try:
                 cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Portal.png', confidence=0.8)
-                pyautogui.click(cursorX, cursorY, 4, .025)
+                pyautogui.click(cursorX, cursorY, 2, .025)
             except pyautogui.ImageNotFoundException:
                 print("Portal not found")
 
