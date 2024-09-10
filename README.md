@@ -70,6 +70,7 @@ Download and install [python](https://www.python.org/)
    ```sh
    pip install pyautogui
    pip install pillow
+   pip install easyocr
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -79,6 +80,7 @@ Download and install [python](https://www.python.org/)
 
 * [ ] Better Error Handling
 * [ ] Better GUI
+* [ ] OCR
 
 See the [open issues](https://github.com/Dalton_V/CookieClickerAutomation/issues) for a full list of proposed features (and known issues).
 
