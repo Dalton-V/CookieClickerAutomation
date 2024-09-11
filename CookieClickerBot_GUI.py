@@ -54,6 +54,7 @@ def auto_play():
     buyAntimCondenser = True
     buyPrism = True
     buyChancemaker = True
+    buyFractalEngine = True
     while True:
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\GoldenCookie.png', confidence=0.4)
@@ -77,6 +78,13 @@ def auto_play():
             pyautogui.scroll(-500)
         except pyautogui.ImageNotFoundException:
             print("Bank not found")
+
+        if buyFractalEngine:
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\FractalEngine.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("Fractal Engine not found")
 
         if buyChancemaker:
             try:
