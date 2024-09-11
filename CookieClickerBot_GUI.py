@@ -81,7 +81,7 @@ def auto_play():
 
         if buyFractalEngine:
             try:
-                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\FractalEngine.png', confidence=0.8)
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\FractalEngine.png', confidence=0.6)
                 pyautogui.click(cursorX, cursorY, 2, .025)
             except pyautogui.ImageNotFoundException:
                 print("Fractal Engine not found")
