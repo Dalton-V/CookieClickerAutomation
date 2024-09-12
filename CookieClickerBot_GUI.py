@@ -50,7 +50,7 @@ def auto_play():
     buyShhipment = False
     buyAlchemy = False
     buyPortal = False
-    buyTimeMachine = True
+    buyTimeMachine = False
     buyAntimCondenser = True
     buyPrism = True
     buyChancemaker = True
