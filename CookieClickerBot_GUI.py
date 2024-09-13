@@ -27,7 +27,18 @@ def click_cookie():
         except pyautogui.ImageNotFoundException:
             print("Golden Cookie not found")
 
-        time.sleep(.5)
+        try:
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\RedCookie.png', confidence=0.4)
+            pyautogui.click(cursorX, cursorY)
+        except pyautogui.ImageNotFoundException:
+            print("Red Cookie not found")
+
+        try:
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wrinkler.png', confidence=0.6)
+            pyautogui.click(cursorX, cursorY, 5)
+        except pyautogui.ImageNotFoundException:
+            print("Wrinkler not found")
+        
 
 def look_for_green():
     image = np.array(pyautogui.screenshot())
@@ -63,6 +74,18 @@ def auto_play():
             print("Golden Cookie not found")
 
         try:
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\RedCookie.png', confidence=0.4)
+            pyautogui.click(cursorX, cursorY)
+        except pyautogui.ImageNotFoundException:
+            print("Red Cookie not found")
+
+        try:
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wrinkler.png', confidence=0.6)
+            pyautogui.click(cursorX, cursorY, 5)
+        except pyautogui.ImageNotFoundException:
+            print("Wrinkler not found")
+
+        try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\StoreEdge.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 2, .025)
         except pyautogui.ImageNotFoundException:
@@ -75,7 +98,7 @@ def auto_play():
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\bank.png', confidence=0.8)
             pyautogui.moveTo(cursorX, cursorY)
-            pyautogui.scroll(-500)
+            pyautogui.scroll(-700)
         except pyautogui.ImageNotFoundException:
             print("Bank not found")
 
@@ -125,7 +148,7 @@ def auto_play():
         try:
             cursorX, cursorY = pyautogui.locateCenterOnScreen('f:\\code\\python\\cookieclickerautomation\\photos\\bank.png', confidence=0.8)
             pyautogui.moveTo(cursorX, cursorY)
-            pyautogui.scroll(500)
+            pyautogui.scroll(700)
         except pyautogui.ImageNotFoundException:
             print("Bank not found")
 
