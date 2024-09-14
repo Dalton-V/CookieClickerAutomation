@@ -50,18 +50,19 @@ def look_for_green():
 def auto_play():
     cookieX, cookieY = pyautogui.locateCenterOnScreen('f:\\code\\python\\CookieClickerAutomation\\photos\\cookie.png', confidence=0.5) 
     #todo: these should be settings to select in the GUI
-    buyCursor = False
-    buyGrandma = False
-    buyFarm = False
-    buyMine = False
-    buyFactory = False
-    buyBank = False
-    buyTemple = False
-    buyWizard = False
-    buyShhipment = False
-    buyAlchemy = False
-    buyPortal = False
-    buyTimeMachine = False
+    buyShop = True
+    buyCursor = True
+    buyGrandma = True
+    buyFarm = True
+    buyMine = True
+    buyFactory = True
+    buyBank = True
+    buyTemple = True
+    buyWizard = True
+    buyShhipment = True
+    buyAlchemy = True
+    buyPortal = True
+    buyTimeMachine = True
     buyAntimCondenser = True
     buyPrism = True
     buyChancemaker = True
@@ -80,19 +81,28 @@ def auto_play():
             print("Red Cookie not found")
 
         try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wrinkler.png', confidence=0.6)
+            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wrinkler.png', confidence=0.8)
             pyautogui.click(cursorX, cursorY, 5)
         except pyautogui.ImageNotFoundException:
-            print("Wrinkler not found")
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wrinkler2.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 5)
+            except pyautogui.ImageNotFoundException:
+                try:
+                    cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\Wrinkler3.png', confidence=0.8)
+                    pyautogui.click(cursorX, cursorY, 5)
+                except pyautogui.ImageNotFoundException:
+                    print("Wrinkler not found")
 
-        try:
-            cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\StoreEdge.png', confidence=0.8)
-            pyautogui.click(cursorX, cursorY, 2, .025)
-        except pyautogui.ImageNotFoundException:
-            print("Store icon not found")
+        if buyShop:
+            try:
+                cursorX, cursorY = pyautogui.locateCenterOnScreen('F:\\Code\\Python\\CookieClickerAutomation\\Photos\\StoreEdge.png', confidence=0.8)
+                pyautogui.click(cursorX, cursorY, 2, .025)
+            except pyautogui.ImageNotFoundException:
+                print("Store icon not found")
 
-        #Go back to the cookie to colapse the store menu
-        pyautogui.click(cookieX, cookieY, 5, .025)
+            #Go back to the cookie to colapse the store menu
+            pyautogui.click(cookieX, cookieY, 5, .025)
 
         #Scroll down to see more buildings
         try:
